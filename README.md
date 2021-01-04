@@ -4,6 +4,10 @@ I always wanted an easy and fast to setup network libary for my Games and outher
 With this you can implement Socket Networking really fast and easy to your project.
 
 These classes allow you to create a server that accepts as many clients as you wish. 
+
+## Setup
+Just Include the Headers and cpp files and you are good to go.
+
 <br></br>
 ### EasyClient
 ```c++
