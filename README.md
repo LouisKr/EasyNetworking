@@ -7,7 +7,7 @@ These classes allow you to create a server that accepts as many clients as you w
 <br></br>
 ### EasyClient
 ```c++
-        Client client("127.0.0.1", 190);
+        Client client("127.0.0.1", 69);
         client.Connect();
         while (true)
         {
@@ -18,7 +18,7 @@ These classes allow you to create a server that accepts as many clients as you w
 <br></br>
 ### EasyServer
 ```c++
-        Server server(190);
+        Server server(69);
         std::cout << "Starting...\n";
         while (!server.Start()) {};
         std::cout << "Server Started!\n";
