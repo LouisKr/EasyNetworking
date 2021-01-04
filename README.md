@@ -5,7 +5,7 @@ With this you can implement Socket Networking really fast and easy to your proje
 
 These classes allow you to create a server that accepts as many clients as you wish. 
 
-<br>
+<br></br>
 ### EasyClient
 ```c++
         Client client("127.0.0.1", 190);
@@ -16,7 +16,7 @@ These classes allow you to create a server that accepts as many clients as you w
             client.Send("Hallo Server");
         }
 ```
-<br>
+<br></br>
 ### EasyServer
 ```c++
         Server server(190);
