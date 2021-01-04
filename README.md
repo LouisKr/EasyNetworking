@@ -16,7 +16,7 @@ These classes allow you to create a server that accepts as many clients as you w
         }
 ```
 <br></br>
-### EasyServer
+### EasyServer that accepts one client
 ```c++
         Server server(69);
         std::cout << "Starting...\n";
