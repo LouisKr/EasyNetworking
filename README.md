@@ -17,14 +17,11 @@ These classes allow you to create a server that accepts as many clients as you w
 ```
 #EasyServer
 ```c++
-       Server server(190);
-
+        Server server(190);
         std::cout << "Starting...\n";
         while (!server.Start()) {};
         std::cout << "Server Started!\n";
-
         while (!server.FindClient()) {};
-
         while (true)
         {
             server.Send(server.Clients[0], "Hallo Client");
