@@ -8,7 +8,8 @@ These classes allow you to create a server that accepts as many clients as you w
 ## Setup
 Just Include the Headers and cpp files and you are good to go.
 
-<br></br>
+## Examples
+
 ### EasyClient
 ```c++
         Client client("127.0.0.1", 69);
@@ -19,7 +20,6 @@ Just Include the Headers and cpp files and you are good to go.
             client.Send("Hallo Server");
         }
 ```
-<br></br>
 ### EasyServer (that accepts one client)
 ```c++
         Server server(69);
