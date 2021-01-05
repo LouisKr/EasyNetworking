@@ -68,7 +68,7 @@ bool Server::FindClient()
 
 std::string Server::Reciev(SOCKET Client)
 {
-    memset(&buf, 0, 255);
+    memset(&mBuf, 0, 255);
 
     // Wait for client to send data;
     fd_set set;
@@ -81,17 +81,12 @@ std::string Server::Reciev(SOCKET Client)
 
     if (rv > 0)
     {
-        int bytesReceived = recv(Client, buf, 255, 0);
-        if (bytesReceived == SOCKET_ERROR)
-        {
-            return "";
-        }
+        int bytesReceived = recv(Client, mBuf, 255, 0);
 
-        if (bytesReceived == 0)
-        {
+        if (bytesReceived == 0 or bytesReceived == SOCKET_ERROR)
             return "";
-        }
-        return buf;
+
+        return mBuf;
     }
     return "";
 }
