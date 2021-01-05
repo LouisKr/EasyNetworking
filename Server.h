@@ -9,11 +9,11 @@ class Server
 {
 public:
     Server(int Port);
+    
     bool Start();
     bool FindClient();
 
     std::string Reciev(SOCKET Client);
-
     bool Send(SOCKET Client, std::string msg);
 
     bool Close();
@@ -23,5 +23,5 @@ private:
     int mPort;
 
     SOCKET mListening;
-    char buf[255];
+    char mBuf[255];
 };
