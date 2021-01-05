@@ -17,7 +17,7 @@ Just Include the Headers and cpp files and you are good to go.
         while (true)
         {
             std::cout << client.Reciev() << "\n";
-            client.Send("Hallo Server");
+            client.Send("Hello Server");
         }
 ```
 ### EasyServer (that accepts one client)
@@ -29,7 +29,7 @@ Just Include the Headers and cpp files and you are good to go.
         while (!server.FindClient()) {};
         while (true)
         {
-            server.Send(server.Clients[0], "Hallo Client");
+            server.Send(server.Clients[0], "Hello Client");
             std::cout << server.Reciev(server.Clients[0]) << "\n";
         }   
 ```
