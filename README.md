@@ -35,7 +35,7 @@ Just Include the Headers and cpp files and you are good to go.
 ```
 ### EasyServer (that accepts many clients)
 ```c++
-      void find_new_client(Server &server)
+void find_new_client(Server &server)
 {
     while (true)
     {
