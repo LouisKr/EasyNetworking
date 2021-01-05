@@ -33,3 +33,50 @@ Just Include the Headers and cpp files and you are good to go.
             std::cout << server.Reciev(server.Clients[0]) << "\n";
         }   
 ```
+### EasyServer (that accepts many clients)
+```c++
+      void find_new_client(Server &server)
+{
+    while (true)
+    {
+        server.FindClient();
+    }
+}
+
+void SendToAll(Server &server, std::string msg)
+{
+    for (size_t i = 0; i < server.Clients.size(); i++)
+    {
+        server.Send(server.Clients[i], msg);
+    }
+}
+
+int main()
+{
+    Server server(69);
+
+    std::cout << "Starting...\n";
+    while (!server.Start()) {};
+    std::cout << "Server Started!\n";
+
+    std::thread thr(find_new_client, std::ref(server));
+    thr.detach();
+
+    while (true)
+    {
+        for (size_t i = 0; i < server.Clients.size(); i++)
+        {
+            std::string msg = server.Reciev(server.Clients[i]);
+            if (msg.size() > 0)
+            {
+                if (msg.size() > 0)
+                {
+                    std::cout << "Client: " << server.Clients[i] << ", " << msg << "\n";
+                    SendToAll(server, msg);
+                }
+            }
+        }
+        Sleep(100);
+    }
+}
+```
