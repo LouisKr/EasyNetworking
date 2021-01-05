@@ -71,12 +71,10 @@ std::string Client::Reciev()
 
     if (rv > 0)
     {
-        memset(&buf, 0, 255);
-        int bytesReceived = recv(mSocket, buf, 255, 0);
+        memset(&mBuf, 0, 255);
+        int bytesReceived = recv(mSocket, mBuf, 255, 0);
         if (bytesReceived > 0)
-        {
-            return buf;
-        }
+            return mBuf;
     }
     return "";
 }
