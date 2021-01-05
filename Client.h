@@ -17,7 +17,7 @@ private:
     std::string mIP;
     int mPort;
 
-    char buf[255];
+    char mBuf[255];
 
     SOCKET mSocket;
 };
